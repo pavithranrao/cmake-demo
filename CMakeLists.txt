@@ -7,7 +7,20 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 add_subdirectory(adder)
 
-target_include_directories(${PROJECT_NAME} PRIVATE adder)
+add_subdirectory(glfw)
 
-target_link_libraries(${PROJECT_NAME} adder)
+target_include_directories(
+        ${PROJECT_NAME}
+        PUBLIC adder
+        PUBLIC glfw/include
+)
 
+target_link_directories(
+        ${PROJECT_NAME}
+        PRIVATE adder
+        PRIVATE glfw/src
+)
+
+target_link_libraries(${PROJECT_NAME} adder glfw)
+
+#set (GLFW_BUILD_DOCS OFF)

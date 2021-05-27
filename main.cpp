@@ -3,10 +3,28 @@
 
 #include <iostream>
 #include <adder.h>
+#include <GLFW/glfw3.h>
+
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     std::cout << add(10.5, 20.5) << std::endl;
+
+    GLFWwindow* window;
+    int width, height;
+
+    if( !glfwInit() )
+    {
+        fprintf( stderr, "Failed to initialize GLFW\n" );
+        exit( EXIT_FAILURE );
+    }
+
+    glfwWindowHint(GLFW_DEPTH_BITS, 16);
+    glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
+
+    window = glfwCreateWindow( 300, 300, "Gears", NULL, NULL );
+
+    glfwDestroyWindow(window);
 
     return 0;
 }
