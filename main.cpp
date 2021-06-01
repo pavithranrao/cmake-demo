@@ -10,7 +10,7 @@
 int main(int argc, char* argv[]) {
     std::cout << "Hello, World!" << std::endl;
     std::cout << add(10.5, 20.5) << std::endl;
-    std::cout << PROJECT_VER_MAJOR << "." << PROJECT_VER_MINOR  << std::endl;
+    std::cout << PROJECT_NAME << " v" << PROJECT_VER_MAJOR << "." << PROJECT_VER_MINOR  << std::endl;
 
 //    GLFWwindow* window;
 //    int width, height;
